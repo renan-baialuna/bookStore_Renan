@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		803F30D525B67B980087897F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F30D425B67B980087897F /* AppDelegate.swift */; };
+		803F30D725B67B980087897F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F30D625B67B980087897F /* SceneDelegate.swift */; };
+		803F30D925B67B980087897F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F30D825B67B980087897F /* ViewController.swift */; };
+		803F30DC25B67B980087897F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 803F30DA25B67B980087897F /* Main.storyboard */; };
+		803F30DF25B67B980087897F /* BookStore_Renan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 803F30DD25B67B980087897F /* BookStore_Renan.xcdatamodeld */; };
+		803F30E125B67B9A0087897F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 803F30E025B67B9A0087897F /* Assets.xcassets */; };
+		803F30E425B67B9A0087897F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 803F30E225B67B9A0087897F /* LaunchScreen.storyboard */; };
+		803F30EF25B67B9A0087897F /* BookStore_RenanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F30EE25B67B9A0087897F /* BookStore_RenanTests.swift */; };
+		803F30FA25B67B9A0087897F /* BookStore_RenanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F30F925B67B9A0087897F /* BookStore_RenanUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		803F30EB25B67B9A0087897F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 803F30C925B67B980087897F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 803F30D025B67B980087897F;
+			remoteInfo = BookStore_Renan;
+		};
+		803F30F625B67B9A0087897F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 803F30C925B67B980087897F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 803F30D025B67B980087897F;
+			remoteInfo = BookStore_Renan;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		803F30D125B67B980087897F /* BookStore_Renan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStore_Renan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		803F30D425B67B980087897F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		803F30D625B67B980087897F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		803F30D825B67B980087897F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		803F30DB25B67B980087897F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		803F30DE25B67B980087897F /* BookStore_Renan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookStore_Renan.xcdatamodel; sourceTree = "<group>"; };
+		803F30E025B67B9A0087897F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		803F30E325B67B9A0087897F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		803F30E525B67B9A0087897F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		803F30EA25B67B9A0087897F /* BookStore_RenanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookStore_RenanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		803F30EE25B67B9A0087897F /* BookStore_RenanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore_RenanTests.swift; sourceTree = "<group>"; };
+		803F30F025B67B9A0087897F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		803F30F525B67B9A0087897F /* BookStore_RenanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookStore_RenanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		803F30F925B67B9A0087897F /* BookStore_RenanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore_RenanUITests.swift; sourceTree = "<group>"; };
+		803F30FB25B67B9A0087897F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		803F30CE25B67B980087897F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		803F30E725B67B9A0087897F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		803F30F225B67B9A0087897F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		803F30C825B67B980087897F = {
+			isa = PBXGroup;
+			children = (
+				803F30D325B67B980087897F /* BookStore_Renan */,
+				803F30ED25B67B9A0087897F /* BookStore_RenanTests */,
+				803F30F825B67B9A0087897F /* BookStore_RenanUITests */,
+				803F30D225B67B980087897F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		803F30D225B67B980087897F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				803F30D125B67B980087897F /* BookStore_Renan.app */,
+				803F30EA25B67B9A0087897F /* BookStore_RenanTests.xctest */,
+				803F30F525B67B9A0087897F /* BookStore_RenanUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		803F30D325B67B980087897F /* BookStore_Renan */ = {
+			isa = PBXGroup;
+			children = (
+				803F30D425B67B980087897F /* AppDelegate.swift */,
+				803F30D625B67B980087897F /* SceneDelegate.swift */,
+				803F30D825B67B980087897F /* ViewController.swift */,
+				803F30DA25B67B980087897F /* Main.storyboard */,
+				803F30E025B67B9A0087897F /* Assets.xcassets */,
+				803F30E225B67B9A0087897F /* LaunchScreen.storyboard */,
+				803F30E525B67B9A0087897F /* Info.plist */,
+				803F30DD25B67B980087897F /* BookStore_Renan.xcdatamodeld */,
+			);
+			path = BookStore_Renan;
+			sourceTree = "<group>";
+		};
+		803F30ED25B67B9A0087897F /* BookStore_RenanTests */ = {
+			isa = PBXGroup;
+			children = (
+				803F30EE25B67B9A0087897F /* BookStore_RenanTests.swift */,
+				803F30F025B67B9A0087897F /* Info.plist */,
+			);
+			path = BookStore_RenanTests;
+			sourceTree = "<group>";
+		};
+		803F30F825B67B9A0087897F /* BookStore_RenanUITests */ = {
+			isa = PBXGroup;
+			children = (
+				803F30F925B67B9A0087897F /* BookStore_RenanUITests.swift */,
+				803F30FB25B67B9A0087897F /* Info.plist */,
+			);
+			path = BookStore_RenanUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		803F30D025B67B980087897F /* BookStore_Renan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 803F30FE25B67B9A0087897F /* Build configuration list for PBXNativeTarget "BookStore_Renan" */;
+			buildPhases = (
+				803F30CD25B67B980087897F /* Sources */,
+				803F30CE25B67B980087897F /* Frameworks */,
+				803F30CF25B67B980087897F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BookStore_Renan;
+			productName = BookStore_Renan;
+			productReference = 803F30D125B67B980087897F /* BookStore_Renan.app */;
+			productType = "com.apple.product-type.application";
+		};
+		803F30E925B67B9A0087897F /* BookStore_RenanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 803F310125B67B9A0087897F /* Build configuration list for PBXNativeTarget "BookStore_RenanTests" */;
+			buildPhases = (
+				803F30E625B67B9A0087897F /* Sources */,
+				803F30E725B67B9A0087897F /* Frameworks */,
+				803F30E825B67B9A0087897F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				803F30EC25B67B9A0087897F /* PBXTargetDependency */,
+			);
+			name = BookStore_RenanTests;
+			productName = BookStore_RenanTests;
+			productReference = 803F30EA25B67B9A0087897F /* BookStore_RenanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		803F30F425B67B9A0087897F /* BookStore_RenanUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 803F310425B67B9A0087897F /* Build configuration list for PBXNativeTarget "BookStore_RenanUITests" */;
+			buildPhases = (
+				803F30F125B67B9A0087897F /* Sources */,
+				803F30F225B67B9A0087897F /* Frameworks */,
+				803F30F325B67B9A0087897F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				803F30F725B67B9A0087897F /* PBXTargetDependency */,
+			);
+			name = BookStore_RenanUITests;
+			productName = BookStore_RenanUITests;
+			productReference = 803F30F525B67B9A0087897F /* BookStore_RenanUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		803F30C925B67B980087897F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					803F30D025B67B980087897F = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					803F30E925B67B9A0087897F = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 803F30D025B67B980087897F;
+					};
+					803F30F425B67B9A0087897F = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 803F30D025B67B980087897F;
+					};
+				};
+			};
+			buildConfigurationList = 803F30CC25B67B980087897F /* Build configuration list for PBXProject "BookStore_Renan" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 803F30C825B67B980087897F;
+			productRefGroup = 803F30D225B67B980087897F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				803F30D025B67B980087897F /* BookStore_Renan */,
+				803F30E925B67B9A0087897F /* BookStore_RenanTests */,
+				803F30F425B67B9A0087897F /* BookStore_RenanUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		803F30CF25B67B980087897F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				803F30E425B67B9A0087897F /* LaunchScreen.storyboard in Resources */,
+				803F30E125B67B9A0087897F /* Assets.xcassets in Resources */,
+				803F30DC25B67B980087897F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		803F30E825B67B9A0087897F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		803F30F325B67B9A0087897F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		803F30CD25B67B980087897F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				803F30D925B67B980087897F /* ViewController.swift in Sources */,
+				803F30D525B67B980087897F /* AppDelegate.swift in Sources */,
+				803F30D725B67B980087897F /* SceneDelegate.swift in Sources */,
+				803F30DF25B67B980087897F /* BookStore_Renan.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		803F30E625B67B9A0087897F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				803F30EF25B67B9A0087897F /* BookStore_RenanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		803F30F125B67B9A0087897F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				803F30FA25B67B9A0087897F /* BookStore_RenanUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		803F30EC25B67B9A0087897F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 803F30D025B67B980087897F /* BookStore_Renan */;
+			targetProxy = 803F30EB25B67B9A0087897F /* PBXContainerItemProxy */;
+		};
+		803F30F725B67B9A0087897F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 803F30D025B67B980087897F /* BookStore_Renan */;
+			targetProxy = 803F30F625B67B9A0087897F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		803F30DA25B67B980087897F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				803F30DB25B67B980087897F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		803F30E225B67B9A0087897F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				803F30E325B67B9A0087897F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		803F30FC25B67B9A0087897F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		803F30FD25B67B9A0087897F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		803F30FF25B67B9A0087897F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 368FWW9ZS3;
+				INFOPLIST_FILE = BookStore_Renan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "RenanBaialuna.BookStore-Renan";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		803F310025B67B9A0087897F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 368FWW9ZS3;
+				INFOPLIST_FILE = BookStore_Renan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "RenanBaialuna.BookStore-Renan";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		803F310225B67B9A0087897F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 368FWW9ZS3;
+				INFOPLIST_FILE = BookStore_RenanTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "RenanBaialuna.BookStore-RenanTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BookStore_Renan.app/BookStore_Renan";
+			};
+			name = Debug;
+		};
+		803F310325B67B9A0087897F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 368FWW9ZS3;
+				INFOPLIST_FILE = BookStore_RenanTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "RenanBaialuna.BookStore-RenanTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BookStore_Renan.app/BookStore_Renan";
+			};
+			name = Release;
+		};
+		803F310525B67B9A0087897F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 368FWW9ZS3;
+				INFOPLIST_FILE = BookStore_RenanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "RenanBaialuna.BookStore-RenanUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BookStore_Renan;
+			};
+			name = Debug;
+		};
+		803F310625B67B9A0087897F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 368FWW9ZS3;
+				INFOPLIST_FILE = BookStore_RenanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "RenanBaialuna.BookStore-RenanUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BookStore_Renan;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		803F30CC25B67B980087897F /* Build configuration list for PBXProject "BookStore_Renan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				803F30FC25B67B9A0087897F /* Debug */,
+				803F30FD25B67B9A0087897F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		803F30FE25B67B9A0087897F /* Build configuration list for PBXNativeTarget "BookStore_Renan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				803F30FF25B67B9A0087897F /* Debug */,
+				803F310025B67B9A0087897F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		803F310125B67B9A0087897F /* Build configuration list for PBXNativeTarget "BookStore_RenanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				803F310225B67B9A0087897F /* Debug */,
+				803F310325B67B9A0087897F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		803F310425B67B9A0087897F /* Build configuration list for PBXNativeTarget "BookStore_RenanUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				803F310525B67B9A0087897F /* Debug */,
+				803F310625B67B9A0087897F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		803F30DD25B67B980087897F /* BookStore_Renan.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				803F30DE25B67B980087897F /* BookStore_Renan.xcdatamodel */,
+			);
+			currentVersion = 803F30DE25B67B980087897F /* BookStore_Renan.xcdatamodel */;
+			path = BookStore_Renan.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 803F30C925B67B980087897F /* Project object */;
+}
