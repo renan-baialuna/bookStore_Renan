@@ -4,6 +4,7 @@
 //
 //  Created by Renan Baialuna on 19/01/21.
 import Foundation
+import UIKit
 
 // MARK: - Volumes
 struct Volumes: Codable {
@@ -33,4 +34,9 @@ struct VolumeInfo: Codable {
 struct ImageLinks: Codable {
     let smallThumbnail: String
     let thumbnail: String
+}
+
+struct VolumeWithImage {
+    let volume: Item
+    let image: UIImage
 }

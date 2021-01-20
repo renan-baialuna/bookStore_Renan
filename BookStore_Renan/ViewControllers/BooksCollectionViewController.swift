@@ -9,7 +9,7 @@ import UIKit
 
 
 class BooksCollectionViewController: UIViewController {
-    var books: [Item] = []
+    var books: [VolumeWithImage] = []
     
     
     @IBOutlet weak var booksCollection: UICollectionView!
@@ -50,7 +50,10 @@ extension BooksCollectionViewController: UICollectionViewDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as! BookCollectionViewCell
-        cell.label.text = "???"
+        let volume = books[indexPath.row]
+        
+        cell.label.text = volume.volume.volumeInfo.title
+        cell.image.image = volume.image
         
         return cell
     }
@@ -59,12 +62,11 @@ extension BooksCollectionViewController: UICollectionViewDelegate, UICollectionV
 }
 
 extension BooksCollectionViewController: manageVolumeData {
-    func returnData(volumes: [Item]) {
-        self.books = volumes
+    func returnVolume(volume: VolumeWithImage) {
+        self.books.append(volume)
         DispatchQueue.main.sync {
             booksCollection.reloadData()
         }
-        
     }
     
     

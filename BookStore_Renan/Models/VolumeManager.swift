@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol manageVolumeData {
-    func returnData(volumes: [Item])
+    func returnVolume(volume: VolumeWithImage)
 }
 
 struct VolumeManager {
@@ -26,8 +27,9 @@ struct VolumeManager {
                 }
                 if let safeData = data {
                     if let information = self.parseJSONVolume(safeData) {
-                        print(information.items.count)
-                        self.delegate?.returnData(volumes: information.items)
+                        for volume in information.items {
+                            getImage(volumeItem: volume)
+                        }
 
                     } else {
                         // error getting info
@@ -46,6 +48,26 @@ struct VolumeManager {
         }
         catch {
             return nil
+        }
+    }
+    
+    func getImage(volumeItem: Item) {
+        if let url = URL(string: volumeItem.volumeInfo.imageLinks.smallThumbnail) {
+
+            let session = URLSession(configuration: .default)
+            
+            let task = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
+                if error != nil {
+                }
+                if let safeData = data {
+                    if let downloadedImage = UIImage(data: safeData){
+                        let volume = VolumeWithImage(volume: volumeItem, image: downloadedImage)
+                        
+                        delegate?.returnVolume(volume: volume)
+                    }
+                }
+            }
+            task.resume()
         }
     }
     

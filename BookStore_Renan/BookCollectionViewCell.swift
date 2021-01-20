@@ -9,5 +9,6 @@ import UIKit
 
 class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var image: UIImageView!
     
 }
