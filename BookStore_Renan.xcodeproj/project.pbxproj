@@ -17,6 +17,8 @@
 		803F30EF25B67B9A0087897F /* BookStore_RenanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F30EE25B67B9A0087897F /* BookStore_RenanTests.swift */; };
 		803F30FA25B67B9A0087897F /* BookStore_RenanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F30F925B67B9A0087897F /* BookStore_RenanUITests.swift */; };
 		803F310F25B681A20087897F /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F310E25B681A20087897F /* BookCollectionViewCell.swift */; };
+		803F689D25B78AA800406DD0 /* VolumeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F689C25B78AA800406DD0 /* VolumeManager.swift */; };
+		803F68A525B78EE100406DD0 /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F68A425B78EE100406DD0 /* Volume.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		803F30F925B67B9A0087897F /* BookStore_RenanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore_RenanUITests.swift; sourceTree = "<group>"; };
 		803F30FB25B67B9A0087897F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		803F310E25B681A20087897F /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
+		803F689C25B78AA800406DD0 /* VolumeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeManager.swift; sourceTree = "<group>"; };
+		803F68A425B78EE100406DD0 /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				803F310E25B681A20087897F /* BookCollectionViewCell.swift */,
+				803F689B25B7826B00406DD0 /* Models */,
 				803F310D25B681780087897F /* ViewControllers */,
 				803F30D425B67B980087897F /* AppDelegate.swift */,
 				803F30D625B67B980087897F /* SceneDelegate.swift */,
@@ -140,6 +145,15 @@
 				803F30D825B67B980087897F /* BooksCollectionViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		803F689B25B7826B00406DD0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				803F689C25B78AA800406DD0 /* VolumeManager.swift */,
+				803F68A425B78EE100406DD0 /* Volume.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +291,8 @@
 				803F30D725B67B980087897F /* SceneDelegate.swift in Sources */,
 				803F310F25B681A20087897F /* BookCollectionViewCell.swift in Sources */,
 				803F30DF25B67B980087897F /* BookStore_Renan.xcdatamodeld in Sources */,
+				803F68A525B78EE100406DD0 /* Volume.swift in Sources */,
+				803F689D25B78AA800406DD0 /* VolumeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

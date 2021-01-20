@@ -9,16 +9,27 @@ import UIKit
 
 
 class BooksCollectionViewController: UIViewController {
-    var books = [1, 2, 3, 4, 5, 6]
+    var books: [Item] = []
+    
+    
     @IBOutlet weak var booksCollection: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    var volumeManager = VolumeManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.booksCollection.delegate = self
         self.booksCollection.dataSource = self
-        // Do any additional setup after loading the view.
+        volumeManager.delegate = self
         
+        volumeManager.performSarch()
+        setFlow()
+    }
+    
+    
+// MARK: - set up UI
+    
+    func setFlow() {
         let space:CGFloat = 5.0
         let dimension = ((view.frame.size.width - 20) - (2 * space)) / 2
 
@@ -39,9 +50,21 @@ extension BooksCollectionViewController: UICollectionViewDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as! BookCollectionViewCell
-        cell.label.text = "\(books[indexPath.row])"
+        cell.label.text = "???"
         
         return cell
+    }
+    
+    
+}
+
+extension BooksCollectionViewController: manageVolumeData {
+    func returnData(volumes: [Item]) {
+        self.books = volumes
+        DispatchQueue.main.sync {
+            booksCollection.reloadData()
+        }
+        
     }
     
     
