@@ -16,9 +16,9 @@ struct VolumeManager {
     
     var delegate: manageVolumeData?
     
-    func performSarch() {
+    func performSearch(index: Int) {
         
-        if let url = URL.booksUrl(index: 0) {
+        if let url = URL.booksUrl(index: index) {
             let session = URLSession(configuration: .default)
             
             let task = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
@@ -28,6 +28,7 @@ struct VolumeManager {
                 if let safeData = data {
                     if let information = self.parseJSONVolume(safeData) {
                         for volume in information.items {
+                            print(volume.id)
                             getImage(volumeItem: volume)
                         }
 
@@ -53,19 +54,26 @@ struct VolumeManager {
     
     func getImage(volumeItem: Item) {
         if let url = URL(string: volumeItem.volumeInfo.imageLinks.smallThumbnail) {
-
             let session = URLSession(configuration: .default)
             
             let task = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
                 if error != nil {
-                }
-                if let safeData = data {
-                    if let downloadedImage = UIImage(data: safeData){
-                        let volume = VolumeWithImage(volume: volumeItem, image: downloadedImage)
-                        
-                        delegate?.returnVolume(volume: volume)
+                    print(error?.localizedDescription)
+                    
+                } else {
+                    if let safeData = data {
+                        if let downloadedImage = UIImage(data: safeData){
+                            let volume = VolumeWithImage(volume: volumeItem, image: downloadedImage)
+                            
+                            delegate?.returnVolume(volume: volume)
+                        } else {
+                            print("no image translated")
+                        }
+                    } else {
+                        print("no image")
                     }
                 }
+                
             }
             task.resume()
         }

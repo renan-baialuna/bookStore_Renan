@@ -10,7 +10,7 @@ import UIKit
 
 class BooksCollectionViewController: UIViewController {
     var books: [VolumeWithImage] = []
-    
+    var pageLoaded = 0
     
     @IBOutlet weak var booksCollection: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
@@ -22,7 +22,7 @@ class BooksCollectionViewController: UIViewController {
         self.booksCollection.dataSource = self
         volumeManager.delegate = self
         
-        volumeManager.performSarch()
+        volumeManager.performSearch(index: pageLoaded)
         setFlow()
     }
     
@@ -34,7 +34,7 @@ class BooksCollectionViewController: UIViewController {
         let dimension = ((view.frame.size.width - 20) - (2 * space)) / 2
 
         flowLayout.minimumInteritemSpacing = space
-        flowLayout.minimumLineSpacing = space
+        flowLayout.minimumLineSpacing = 2 * space
         flowLayout.itemSize = CGSize(width: dimension, height: dimension * 5 / 3)
     }
     
@@ -54,8 +54,17 @@ extension BooksCollectionViewController: UICollectionViewDelegate, UICollectionV
         
         cell.label.text = volume.volume.volumeInfo.title
         cell.image.image = volume.image
+        cell.backView.layer.cornerRadius = 10
+        cell.backView.layer.masksToBounds = true
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if (indexPath.row == books.count - 1 ) {
+            self.pageLoaded += 1
+            volumeManager.performSearch(index: pageLoaded)
+        }
     }
     
     
@@ -63,8 +72,9 @@ extension BooksCollectionViewController: UICollectionViewDelegate, UICollectionV
 
 extension BooksCollectionViewController: manageVolumeData {
     func returnVolume(volume: VolumeWithImage) {
-        self.books.append(volume)
+        
         DispatchQueue.main.sync {
+            self.books.append(volume)
             booksCollection.reloadData()
         }
     }

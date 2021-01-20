@@ -19,8 +19,6 @@ extension URL {
             URLQueryItem(name: "startIndex", value: String(index))
         ]
         
-        print(components)
-        
         return components.url
     }
 }

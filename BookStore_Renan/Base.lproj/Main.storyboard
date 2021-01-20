@@ -34,6 +34,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="185" height="292"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c75-VD-zrH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="185" height="292"/>
+                                                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKw-V4-3jW">
                                                     <rect key="frame" x="5" y="232" width="175" height="50"/>
                                                     <constraints>
@@ -49,17 +53,21 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="UKw-V4-3jW" secondAttribute="trailing" constant="5" id="7y8-hD-aev"/>
+                                                <constraint firstItem="c75-VD-zrH" firstAttribute="top" secondItem="G4R-dV-cxT" secondAttribute="top" id="8Ni-ej-Ylj"/>
                                                 <constraint firstItem="1sU-xD-1EZ" firstAttribute="top" secondItem="G4R-dV-cxT" secondAttribute="top" constant="10" id="9KE-aF-lAi"/>
                                                 <constraint firstItem="UKw-V4-3jW" firstAttribute="leading" secondItem="G4R-dV-cxT" secondAttribute="leading" constant="5" id="Bbd-8a-DVT"/>
+                                                <constraint firstItem="c75-VD-zrH" firstAttribute="leading" secondItem="G4R-dV-cxT" secondAttribute="leading" id="IxS-an-IF5"/>
                                                 <constraint firstItem="UKw-V4-3jW" firstAttribute="top" secondItem="1sU-xD-1EZ" secondAttribute="bottom" constant="10" id="JO9-aC-vb2"/>
+                                                <constraint firstAttribute="bottom" secondItem="c75-VD-zrH" secondAttribute="bottom" id="MpW-4h-HKx"/>
                                                 <constraint firstAttribute="trailing" secondItem="1sU-xD-1EZ" secondAttribute="trailing" constant="10" id="TKU-LI-KxH"/>
                                                 <constraint firstItem="1sU-xD-1EZ" firstAttribute="leading" secondItem="G4R-dV-cxT" secondAttribute="leading" constant="10" id="XJM-vv-MuC"/>
                                                 <constraint firstAttribute="bottom" secondItem="UKw-V4-3jW" secondAttribute="bottom" constant="10" id="Yiq-sm-fyF"/>
+                                                <constraint firstAttribute="trailing" secondItem="c75-VD-zrH" secondAttribute="trailing" id="gcg-Jg-vjU"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" red="0.020764235410000002" green="0.55743277069999997" blue="0.50588017699999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <size key="customSize" width="185" height="292"/>
                                         <connections>
+                                            <outlet property="backView" destination="c75-VD-zrH" id="26x-u0-oVj"/>
                                             <outlet property="image" destination="1sU-xD-1EZ" id="v1j-H6-wom"/>
                                             <outlet property="label" destination="UKw-V4-3jW" id="O1n-I7-4uJ"/>
                                         </connections>
@@ -104,6 +112,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
