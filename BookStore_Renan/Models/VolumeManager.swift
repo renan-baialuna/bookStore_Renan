@@ -12,11 +12,12 @@ protocol manageVolumeData {
 }
 
 struct VolumeManager {
-    let stringUrl = "https://www.googleapis.com/books/v1/volumes?q=ios&maxResults=20&startIndex=0"
+    
     var delegate: manageVolumeData?
     
     func performSarch() {
-        if let url = URL(string: stringUrl) {
+        
+        if let url = URL.booksUrl(index: 0) {
             let session = URLSession(configuration: .default)
             
             let task = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in

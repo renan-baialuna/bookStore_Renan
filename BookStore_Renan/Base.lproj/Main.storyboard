@@ -34,16 +34,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="185" height="292"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKw-V4-3jW">
-                                                    <rect key="frame" x="71.5" y="135.5" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKw-V4-3jW">
+                                                    <rect key="frame" x="5" y="261" width="175" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="UKw-V4-3jW" firstAttribute="centerY" secondItem="G4R-dV-cxT" secondAttribute="centerY" id="TnH-v5-Qhm"/>
-                                                <constraint firstItem="UKw-V4-3jW" firstAttribute="centerX" secondItem="G4R-dV-cxT" secondAttribute="centerX" id="st3-do-j9A"/>
+                                                <constraint firstAttribute="trailing" secondItem="UKw-V4-3jW" secondAttribute="trailing" constant="5" id="7y8-hD-aev"/>
+                                                <constraint firstItem="UKw-V4-3jW" firstAttribute="leading" secondItem="G4R-dV-cxT" secondAttribute="leading" constant="5" id="Bbd-8a-DVT"/>
+                                                <constraint firstAttribute="bottom" secondItem="UKw-V4-3jW" secondAttribute="bottom" constant="10" id="Yiq-sm-fyF"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" red="0.020764235410000002" green="0.55743277069999997" blue="0.50588017699999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
