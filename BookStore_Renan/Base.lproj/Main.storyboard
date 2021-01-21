@@ -147,7 +147,26 @@
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rT7-YU-ltG">
                                                                         <rect key="frame" x="0.0" y="197.5" width="203" height="185.5"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4E-6f-ZG6">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="203" height="185.5"/>
+                                                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                                                <state key="normal" title="Comprar">
+                                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </state>
+                                                                                <connections>
+                                                                                    <action selector="buyAction" destination="c9o-Nf-s9j" eventType="touchUpInside" id="PLi-Hl-gQC"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                        </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="V4E-6f-ZG6" firstAttribute="leading" secondItem="rT7-YU-ltG" secondAttribute="leading" id="SYH-v4-0WK"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="V4E-6f-ZG6" secondAttribute="bottom" id="Vyl-o6-1d5"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="V4E-6f-ZG6" secondAttribute="trailing" id="cX6-iy-lMq"/>
+                                                                            <constraint firstItem="V4E-6f-ZG6" firstAttribute="top" secondItem="rT7-YU-ltG" secondAttribute="top" id="e8X-RJ-vb5"/>
+                                                                        </constraints>
                                                                     </view>
                                                                 </subviews>
                                                             </stackView>
@@ -210,6 +229,7 @@
                     <navigationItem key="navigationItem" id="UuP-YA-CWH"/>
                     <connections>
                         <outlet property="bookImage" destination="ABB-wk-7Hb" id="5Yb-vg-5iV"/>
+                        <outlet property="buyButton" destination="V4E-6f-ZG6" id="9eu-sg-JZb"/>
                         <outlet property="descriptionBookTextField" destination="ZeU-Ht-j4z" id="F5A-Nz-kW6"/>
                         <outlet property="titleLable" destination="HZK-8r-mbY" id="FWV-3U-qQA"/>
                     </connections>
@@ -243,6 +263,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
