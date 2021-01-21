@@ -20,6 +20,7 @@
 		803F689D25B78AA800406DD0 /* VolumeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F689C25B78AA800406DD0 /* VolumeManager.swift */; };
 		803F68A525B78EE100406DD0 /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F68A425B78EE100406DD0 /* Volume.swift */; };
 		80B56F9F25B7D6A0002CE976 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B56F9E25B7D6A0002CE976 /* URL+Extension.swift */; };
+		80B56FA425B8D5BB002CE976 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B56FA325B8D5BB002CE976 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		803F689C25B78AA800406DD0 /* VolumeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeManager.swift; sourceTree = "<group>"; };
 		803F68A425B78EE100406DD0 /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 		80B56F9E25B7D6A0002CE976 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		80B56FA325B8D5BB002CE976 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				803F30D825B67B980087897F /* BooksCollectionViewController.swift */,
+				80B56FA325B8D5BB002CE976 /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80B56FA425B8D5BB002CE976 /* DetailViewController.swift in Sources */,
 				803F30D925B67B980087897F /* BooksCollectionViewController.swift in Sources */,
 				80B56F9F25B7D6A0002CE976 /* URL+Extension.swift in Sources */,
 				803F30D525B67B980087897F /* AppDelegate.swift in Sources */,

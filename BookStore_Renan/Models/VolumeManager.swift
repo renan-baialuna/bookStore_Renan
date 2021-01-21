@@ -16,7 +16,7 @@ struct VolumeManager {
     
     var delegate: manageVolumeData?
     
-    func performSearch(index: Int) {
+    func performSearch(index: Int, books: [VolumeWithImage]) {
         
         if let url = URL.booksUrl(index: index) {
             let session = URLSession(configuration: .default)
@@ -28,8 +28,12 @@ struct VolumeManager {
                 if let safeData = data {
                     if let information = self.parseJSONVolume(safeData) {
                         for volume in information.items {
-                            print(volume.id)
-                            getImage(volumeItem: volume)
+                            if books.filter({ (el) -> Bool in
+                                return el.volume.id == volume.id
+                            }).count == 0 {
+                                getImage(volumeItem: volume)
+                            }
+                            
                         }
 
                     } else {

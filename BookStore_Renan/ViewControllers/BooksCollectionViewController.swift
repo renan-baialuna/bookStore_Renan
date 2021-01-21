@@ -22,7 +22,7 @@ class BooksCollectionViewController: UIViewController {
         self.booksCollection.dataSource = self
         volumeManager.delegate = self
         
-        volumeManager.performSearch(index: pageLoaded)
+        volumeManager.performSearch(index: pageLoaded, books: books)
         setFlow()
     }
     
@@ -63,8 +63,14 @@ extension BooksCollectionViewController: UICollectionViewDelegate, UICollectionV
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if (indexPath.row == books.count - 1 ) {
             self.pageLoaded += 1
-            volumeManager.performSearch(index: pageLoaded)
+            volumeManager.performSearch(index: pageLoaded, books: books)
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = self.storyboard!.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        controller.book = books[indexPath.row]
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     
