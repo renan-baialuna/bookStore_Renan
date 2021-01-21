@@ -10,12 +10,12 @@ import UIKit
 class DetailViewController: UIViewController {
 
     var book: VolumeWithImage!
-    
-    @IBOutlet weak var titleLable: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var authorLable: UILabel!
     @IBOutlet weak var bookImage: UIImageView!
     @IBOutlet weak var descriptionBookTextField: UITextView!
     @IBOutlet weak var buyButton: UIButton!
-    
+    @IBOutlet weak var favoriteButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +23,19 @@ class DetailViewController: UIViewController {
         buyButton.layer.cornerRadius = 10
         buyButton.layer.masksToBounds = true
         
+        
         if book.volume.saleInfo.buyLink == nil {
             buyButton.isHidden = true
         }
         
-        self.title = book.volume.volumeInfo.title
-        // Do any additional setup after loading the view.
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.minimumScaleFactor = 0.5
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        titleLable.text = book.volume.volumeInfo.authors?.joined(separator: " - ")
+        titleLabel.text = book.volume.volumeInfo.title
+        authorLable.text = book.volume.volumeInfo.authors?.joined(separator: " - ")
         bookImage.image = book.image
         descriptionBookTextField.text = book.volume.volumeInfo.description
     }
@@ -44,6 +46,10 @@ class DetailViewController: UIViewController {
                 UIApplication.shared.open(url)
             }
         }
+    }
+    
+    @IBAction func favoriteBook() {
+        self.favoriteButton.image = UIImage(systemName: "star.fill", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))
     }
 
 }

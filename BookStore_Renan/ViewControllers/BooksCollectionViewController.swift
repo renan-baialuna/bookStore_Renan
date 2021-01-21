@@ -22,8 +22,12 @@ class BooksCollectionViewController: UIViewController {
         self.booksCollection.dataSource = self
         volumeManager.delegate = self
         
-        volumeManager.performSearch(index: pageLoaded, books: books)
         setFlow()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        volumeManager.performSearch(index: pageLoaded, books: books)
     }
     
     
@@ -37,9 +41,6 @@ class BooksCollectionViewController: UIViewController {
         flowLayout.minimumLineSpacing = 2 * space
         flowLayout.itemSize = CGSize(width: dimension, height: dimension * 5 / 3)
     }
-    
-
-
 }
 
 
