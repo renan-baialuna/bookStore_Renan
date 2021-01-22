@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var descriptionBookTextField: UITextView!
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var favoriteButton: UIBarButtonItem!
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let dataManager = FavoritesManager(appDelegate: UIApplication.shared.delegate as! AppDelegate)
     
     var isFavorite: Bool = false
     var favorite: Favorites?
@@ -44,12 +44,9 @@ class DetailViewController: UIViewController {
         bookImage.image = book.image
         descriptionBookTextField.text = book.volume.volumeInfo.description
         
-        
-
-        if let foo = appDelegate.favorites.first(where: {$0.id == book.volume.id}) {
-            view.backgroundColor = UIColor.yellow
+        if let fav = dataManager.getFavorite(book.volume.id) {
             isFavorite = true
-            self.favorite = foo
+            self.favorite = fav
         }
         chageFavoriteUI(isFavorite: isFavorite)
     }
@@ -62,39 +59,11 @@ class DetailViewController: UIViewController {
         }
     }
     
-    func newFavorite() {
-        saveFavorite()
-        
-    }
-    
-    func saveFavorite() {
-        let newFavorite = Favorites(context: context)
-        newFavorite.id = book.volume.id
-        
-        do {
-            try context.save()
-        } catch {
-            
-        }
-    }
-    
-    func deleteFavorite() {
-        if let fav = favorite {
-            self.context.delete(fav)
-        }
-        do {
-            try context.save()
-        } catch {
-            
-        }
-    }
-    
     @IBAction func favoriteBook() {
         if isFavorite {
-            deleteFavorite()
-            
+            dataManager.deleteFavorite(book.volume.id)
         } else {
-            saveFavorite()
+            dataManager.saveFavorite(book.volume.id)
         }
         isFavorite = !isFavorite
         chageFavoriteUI(isFavorite: isFavorite)

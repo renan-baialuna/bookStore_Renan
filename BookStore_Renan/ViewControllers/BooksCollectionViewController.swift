@@ -11,13 +11,12 @@ import UIKit
 class BooksCollectionViewController: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var books: [VolumeWithImage] = []
-    var favorites: [Favorites] = []
     var pageLoaded = 0
     
     @IBOutlet weak var booksCollection: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     var volumeManager = VolumeManager()
-    var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var dataMager = FavoritesManager(appDelegate: (UIApplication.shared.delegate as! AppDelegate))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,19 +29,9 @@ class BooksCollectionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchFavorites()
         self.booksCollection.reloadData()
     }
     
-    func fetchFavorites() {
-        do {
-            self.favorites = try context.fetch(Favorites.fetchRequest())
-            appDelegate.favorites = self.favorites
-        } catch {
-            
-        }
-        
-    }
     
 // MARK: - set up UI
     
@@ -66,10 +55,9 @@ extension BooksCollectionViewController: UICollectionViewDelegate, UICollectionV
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as! BookCollectionViewCell
         let volume = books[indexPath.row]
 
-        if favorites.contains(where: {$0.id == volume.volume.id}) {
+        if dataMager.getFavorite(volume.volume.id) != nil {
             cell.favoriteImage.isHidden = false
         } else {
-            cell.backView.backgroundColor = UIColor.white
             cell.favoriteImage.isHidden = true
         }
         
