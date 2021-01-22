@@ -16,6 +16,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var descriptionBookTextField: UITextView!
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var favoriteButton: UIBarButtonItem!
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    var isFavorite: Bool = false
+    var favorite: Favorites?
+    var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +43,15 @@ class DetailViewController: UIViewController {
         authorLable.text = book.volume.volumeInfo.authors?.joined(separator: " - ")
         bookImage.image = book.image
         descriptionBookTextField.text = book.volume.volumeInfo.description
+        
+        
+
+        if let foo = appDelegate.favorites.first(where: {$0.id == book.volume.id}) {
+            view.backgroundColor = UIColor.yellow
+            isFavorite = true
+            self.favorite = foo
+        }
+        chageFavoriteUI(isFavorite: isFavorite)
     }
     
     @IBAction func buyAction() {
@@ -48,8 +62,51 @@ class DetailViewController: UIViewController {
         }
     }
     
+    func newFavorite() {
+        saveFavorite()
+        
+    }
+    
+    func saveFavorite() {
+        let newFavorite = Favorites(context: context)
+        newFavorite.id = book.volume.id
+        
+        do {
+            try context.save()
+        } catch {
+            
+        }
+    }
+    
+    func deleteFavorite() {
+        if let fav = favorite {
+            self.context.delete(fav)
+        }
+        do {
+            try context.save()
+        } catch {
+            
+        }
+    }
+    
     @IBAction func favoriteBook() {
-        self.favoriteButton.image = UIImage(systemName: "star.fill", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))
+        if isFavorite {
+            deleteFavorite()
+            
+        } else {
+            saveFavorite()
+        }
+        isFavorite = !isFavorite
+        chageFavoriteUI(isFavorite: isFavorite)
+        
+    }
+    
+    func chageFavoriteUI(isFavorite: Bool) {
+        if isFavorite {
+            self.favoriteButton.image = UIImage(systemName: "star.fill", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))
+        } else {
+            self.favoriteButton.image = UIImage(systemName: "star", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))
+        }
     }
 
 }

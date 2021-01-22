@@ -9,27 +9,40 @@ import UIKit
 
 
 class BooksCollectionViewController: UIViewController {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var books: [VolumeWithImage] = []
+    var favorites: [Favorites] = []
     var pageLoaded = 0
     
     @IBOutlet weak var booksCollection: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     var volumeManager = VolumeManager()
+    var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.booksCollection.delegate = self
         self.booksCollection.dataSource = self
         volumeManager.delegate = self
-        
+        volumeManager.performSearch(index: pageLoaded, books: books)
         setFlow()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        volumeManager.performSearch(index: pageLoaded, books: books)
+        fetchFavorites()
+        self.booksCollection.reloadData()
     }
     
+    func fetchFavorites() {
+        do {
+            self.favorites = try context.fetch(Favorites.fetchRequest())
+            appDelegate.favorites = self.favorites
+        } catch {
+            
+        }
+        
+    }
     
 // MARK: - set up UI
     
@@ -52,6 +65,13 @@ extension BooksCollectionViewController: UICollectionViewDelegate, UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as! BookCollectionViewCell
         let volume = books[indexPath.row]
+
+        if favorites.contains(where: {$0.id == volume.volume.id}) {
+            cell.favoriteImage.isHidden = false
+        } else {
+            cell.backView.backgroundColor = UIColor.white
+            cell.favoriteImage.isHidden = true
+        }
         
         cell.label.text = volume.volume.volumeInfo.title
         cell.image.image = volume.image
