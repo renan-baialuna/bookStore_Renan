@@ -11,10 +11,14 @@ import UIKit
 class BooksCollectionViewController: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var books: [VolumeWithImage] = []
+    var booksFavorited: [VolumeWithImage] = []
     var pageLoaded = 0
+    var onlyFavorites = false
     
     @IBOutlet weak var booksCollection: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    @IBOutlet weak var favoritesFilterButton: UIBarButtonItem!
+    
     var volumeManager = VolumeManager()
     var dataMager = FavoritesManager(appDelegate: (UIApplication.shared.delegate as! AppDelegate))
 
@@ -32,6 +36,14 @@ class BooksCollectionViewController: UIViewController {
         self.booksCollection.reloadData()
     }
     
+    func getAllFavoriteBooks() {
+        booksFavorited = []
+        for book in books {
+            if dataMager.getFavorite(book.volume.id) != nil {
+                booksFavorited.append(book)
+            }
+        }
+    }
     
 // MARK: - set up UI
     
@@ -43,17 +55,45 @@ class BooksCollectionViewController: UIViewController {
         flowLayout.minimumLineSpacing = 2 * space
         flowLayout.itemSize = CGSize(width: dimension, height: dimension * 5 / 3)
     }
+    
+    @IBAction func displayFavorites() {
+        onlyFavorites = !onlyFavorites
+        self.getAllFavoriteBooks()
+        changeButtonIcont(onlyFavorites)
+        self.booksCollection.reloadData()
+    }
+    
+    func changeButtonIcont(_ status: Bool) {
+        if status {
+            favoritesFilterButton.image = UIImage(systemName: "star.circle.fill", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))
+        } else {
+            favoritesFilterButton.image = UIImage(systemName: "star.circle", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))
+        }
+    }
+    
 }
 
+// MARK: - Collection view control
 
 extension BooksCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return books.count
+        if onlyFavorites {
+            return booksFavorited.count
+        } else {
+            return books.count
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as! BookCollectionViewCell
-        let volume = books[indexPath.row]
+        var volume: VolumeWithImage
+        if onlyFavorites {
+            volume = booksFavorited[indexPath.row]
+        } else {
+            volume = books[indexPath.row]
+        }
+        
 
         if dataMager.getFavorite(volume.volume.id) != nil {
             cell.favoriteImage.isHidden = false
@@ -83,7 +123,10 @@ extension BooksCollectionViewController: UICollectionViewDelegate, UICollectionV
     }
     
     
+    
 }
+
+// MARK: - API delegate implementation
 
 extension BooksCollectionViewController: manageVolumeData {
     func returnVolume(volume: VolumeWithImage) {

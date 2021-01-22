@@ -95,9 +95,16 @@
                             <constraint firstItem="mdh-pA-IFz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="rgF-6Y-yTQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="F6r-ib-Lgh"/>
+                    <navigationItem key="navigationItem" id="F6r-ib-Lgh">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="star.circle" catalog="system" id="tN4-SR-lcz">
+                            <connections>
+                                <action selector="displayFavorites" destination="BYZ-38-t0r" id="Qfe-G0-ucH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="booksCollection" destination="mdh-pA-IFz" id="VGs-zn-LfU"/>
+                        <outlet property="favoritesFilterButton" destination="tN4-SR-lcz" id="cVy-CC-Eqb"/>
                         <outlet property="flowLayout" destination="eBh-80-J3V" id="uBN-Al-zyY"/>
                         <segue destination="c9o-Nf-s9j" kind="show" id="Zq5-7a-aaY"/>
                     </connections>
@@ -290,6 +297,7 @@
     </scenes>
     <resources>
         <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.circle" catalog="system" width="128" height="121"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
