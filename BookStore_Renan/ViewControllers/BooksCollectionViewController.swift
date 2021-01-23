@@ -71,6 +71,21 @@ class BooksCollectionViewController: UIViewController {
         }
     }
     
+    func createErrorAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        let action = UIAlertAction(title: "Ok", style: .default) { (action) in
+            self.volumeManager.performSearch(index: self.pageLoaded, books: self.books)
+        }
+        alert.addAction(action)
+        
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        
+    }
+    
 }
 
 // MARK: - Collection view control
@@ -129,6 +144,29 @@ extension BooksCollectionViewController: UICollectionViewDelegate, UICollectionV
 // MARK: - API delegate implementation
 
 extension BooksCollectionViewController: manageVolumeData {
+    func returnError(status: errorMessage) {
+        let title: String
+        let message: String
+        switch status {
+        case .problemConnecting:
+            title = "Error de Conexão"
+            message = "Problemas ao conectar, verifique sua conexão"
+        case .problemInResponse:
+            title = "Error"
+            message = "Problemas com a resposta dos dados"
+        case .problemWithCode(code: let code):
+            title = "Error"
+            message = "Problemas com a comunicação com o backend, código: \(code)"
+        case .problemTranslatingData:
+            title = "Error de Tradução"
+            message = "problema conectando com a tradução de dados do backend"
+            
+        }
+        
+        createErrorAlert(title: title, message: message)
+        
+    }
+    
     func returnVolume(volume: VolumeWithImage) {
         
         DispatchQueue.main.sync {

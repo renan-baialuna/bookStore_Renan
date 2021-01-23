@@ -10,6 +10,7 @@ import UIKit
 
 protocol manageVolumeData {
     func returnVolume(volume: VolumeWithImage)
+    func returnError(status: errorMessage)
 }
 
 struct VolumeManager {
@@ -23,8 +24,15 @@ struct VolumeManager {
             
             let task = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
                 if error != nil {
-                    // error in request status
+                    delegate?.returnError(status: .problemConnecting)
                 }
+                
+                if let httpResponse = response as? HTTPURLResponse {
+                    if httpResponse.statusCode >= 400 {
+                        delegate?.returnError(status: .problemWithCode(code: httpResponse.statusCode))
+                    }
+                }
+                
                 if let safeData = data {
                     if let information = self.parseJSONVolume(safeData) {
                         for volume in information.items {
@@ -33,13 +41,12 @@ struct VolumeManager {
                             }).count == 0 {
                                 getImage(volumeItem: volume)
                             }
-                            
                         }
-
                     } else {
-                        // error getting info
+                        delegate?.returnError(status: .problemTranslatingData)
                     }
                 }
+                
             }
             task.resume()
         }

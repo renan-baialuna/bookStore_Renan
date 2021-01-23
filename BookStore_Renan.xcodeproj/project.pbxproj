@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		801F628C25BB5FB600615B6B /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801F628B25BB5FB600615B6B /* FavoritesManager.swift */; };
+		801F629A25BBA0CC00615B6B /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801F629925BBA0CC00615B6B /* ErrorMessages.swift */; };
 		803F30D525B67B980087897F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F30D425B67B980087897F /* AppDelegate.swift */; };
 		803F30D725B67B980087897F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F30D625B67B980087897F /* SceneDelegate.swift */; };
 		803F30D925B67B980087897F /* BooksCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F30D825B67B980087897F /* BooksCollectionViewController.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		801F628B25BB5FB600615B6B /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
+		801F629925BBA0CC00615B6B /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
 		803F30D125B67B980087897F /* BookStore_Renan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStore_Renan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		803F30D425B67B980087897F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		803F30D625B67B980087897F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,10 +159,11 @@
 		803F689B25B7826B00406DD0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				803F689C25B78AA800406DD0 /* VolumeManager.swift */,
 				803F68A425B78EE100406DD0 /* Volume.swift */,
 				80B56F9E25B7D6A0002CE976 /* URL+Extension.swift */,
+				803F689C25B78AA800406DD0 /* VolumeManager.swift */,
 				801F628B25BB5FB600615B6B /* FavoritesManager.swift */,
+				801F629925BBA0CC00615B6B /* ErrorMessages.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				803F30D525B67B980087897F /* AppDelegate.swift in Sources */,
 				803F30D725B67B980087897F /* SceneDelegate.swift in Sources */,
 				803F310F25B681A20087897F /* BookCollectionViewCell.swift in Sources */,
+				801F629A25BBA0CC00615B6B /* ErrorMessages.swift in Sources */,
 				803F30DF25B67B980087897F /* BookStore_Renan.xcdatamodeld in Sources */,
 				803F68A525B78EE100406DD0 /* Volume.swift in Sources */,
 				803F689D25B78AA800406DD0 /* VolumeManager.swift in Sources */,

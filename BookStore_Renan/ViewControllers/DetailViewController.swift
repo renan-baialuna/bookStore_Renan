@@ -20,7 +20,6 @@ class DetailViewController: UIViewController {
     
     var isFavorite: Bool = false
     var favorite: Favorites?
-    var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
