@@ -34,6 +34,9 @@ class BooksCollectionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.booksCollection.reloadData()
+        if onlyFavorites {
+            self.getAllFavoriteBooks()
+        }
     }
     
     func getAllFavoriteBooks() {
@@ -125,7 +128,7 @@ extension BooksCollectionViewController: UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if (indexPath.row == books.count - 1 ) {
+        if (indexPath.row == books.count - 1 ) && !onlyFavorites {
             self.pageLoaded += 1
             volumeManager.performSearch(index: pageLoaded, books: books)
         }
@@ -133,7 +136,11 @@ extension BooksCollectionViewController: UICollectionViewDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = self.storyboard!.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        controller.book = books[indexPath.row]
+        if onlyFavorites {
+            controller.book = booksFavorited[indexPath.row]
+        } else {
+            controller.book = books[indexPath.row]
+        }
         navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -169,9 +176,13 @@ extension BooksCollectionViewController: manageVolumeData {
     
     func returnVolume(volume: VolumeWithImage) {
         
-        DispatchQueue.main.sync {
-            self.books.append(volume)
-            booksCollection.reloadData()
+        if books.filter({ (el) -> Bool in
+            return el.volume.id == volume.volume.id
+        }).count == 0 {
+            DispatchQueue.main.sync {
+                self.books.append(volume)
+                booksCollection.reloadData()
+            }
         }
     }
     
