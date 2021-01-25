@@ -16,7 +16,7 @@
 		803F30DF25B67B980087897F /* BookStore_Renan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 803F30DD25B67B980087897F /* BookStore_Renan.xcdatamodeld */; };
 		803F30E125B67B9A0087897F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 803F30E025B67B9A0087897F /* Assets.xcassets */; };
 		803F30E425B67B9A0087897F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 803F30E225B67B9A0087897F /* LaunchScreen.storyboard */; };
-		803F30EF25B67B9A0087897F /* BookStore_RenanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F30EE25B67B9A0087897F /* BookStore_RenanTests.swift */; };
+		803F30EF25B67B9A0087897F /* VolumeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F30EE25B67B9A0087897F /* VolumeManagerTests.swift */; };
 		803F30FA25B67B9A0087897F /* BookStore_RenanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F30F925B67B9A0087897F /* BookStore_RenanUITests.swift */; };
 		803F310F25B681A20087897F /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F310E25B681A20087897F /* BookCollectionViewCell.swift */; };
 		803F689D25B78AA800406DD0 /* VolumeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F689C25B78AA800406DD0 /* VolumeManager.swift */; };
@@ -24,6 +24,7 @@
 		80B56F9F25B7D6A0002CE976 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B56F9E25B7D6A0002CE976 /* URL+Extension.swift */; };
 		80B56FA425B8D5BB002CE976 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B56FA325B8D5BB002CE976 /* DetailViewController.swift */; };
 		80F1E6AD25BEF37A009E1462 /* Colors+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F1E6AC25BEF37A009E1462 /* Colors+Extension.swift */; };
+		80F1E6C225BF162C009E1462 /* TestBookCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F1E6C125BF162C009E1462 /* TestBookCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +57,7 @@
 		803F30E325B67B9A0087897F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		803F30E525B67B9A0087897F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		803F30EA25B67B9A0087897F /* BookStore_RenanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookStore_RenanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		803F30EE25B67B9A0087897F /* BookStore_RenanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore_RenanTests.swift; sourceTree = "<group>"; };
+		803F30EE25B67B9A0087897F /* VolumeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeManagerTests.swift; sourceTree = "<group>"; };
 		803F30F025B67B9A0087897F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		803F30F525B67B9A0087897F /* BookStore_RenanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookStore_RenanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		803F30F925B67B9A0087897F /* BookStore_RenanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore_RenanUITests.swift; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 		80B56F9E25B7D6A0002CE976 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		80B56FA325B8D5BB002CE976 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		80F1E6AC25BEF37A009E1462 /* Colors+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+Extension.swift"; sourceTree = "<group>"; };
+		80F1E6C125BF162C009E1462 /* TestBookCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBookCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +137,9 @@
 		803F30ED25B67B9A0087897F /* BookStore_RenanTests */ = {
 			isa = PBXGroup;
 			children = (
-				803F30EE25B67B9A0087897F /* BookStore_RenanTests.swift */,
+				803F30EE25B67B9A0087897F /* VolumeManagerTests.swift */,
 				803F30F025B67B9A0087897F /* Info.plist */,
+				80F1E6C125BF162C009E1462 /* TestBookCollection.swift */,
 			);
 			path = BookStore_RenanTests;
 			sourceTree = "<group>";
@@ -328,7 +331,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				803F30EF25B67B9A0087897F /* BookStore_RenanTests.swift in Sources */,
+				80F1E6C225BF162C009E1462 /* TestBookCollection.swift in Sources */,
+				803F30EF25B67B9A0087897F /* VolumeManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

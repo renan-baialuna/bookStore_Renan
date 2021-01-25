@@ -8,7 +8,7 @@
 import XCTest
 @testable import BookStore_Renan
 
-class BookStore_RenanTests: XCTestCase {
+class VolumeManagerTests: XCTestCase {
     var sut = VolumeManager()
 
     func testUrl() {
