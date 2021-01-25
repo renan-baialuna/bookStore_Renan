@@ -21,6 +21,8 @@ class BooksCollectionViewController: UIViewController {
     
     var volumeManager = VolumeManager()
     var dataMager = FavoritesManager(appDelegate: (UIApplication.shared.delegate as! AppDelegate))
+    
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,19 +61,19 @@ class BooksCollectionViewController: UIViewController {
         flowLayout.itemSize = CGSize(width: dimension, height: dimension * 5 / 3)
     }
     
-    @IBAction func displayFavorites() {
-        onlyFavorites = !onlyFavorites
-        self.getAllFavoriteBooks()
-        changeButtonIcont(onlyFavorites)
-        self.booksCollection.reloadData()
-    }
-    
     func changeButtonIcont(_ status: Bool) {
         if status {
             favoritesFilterButton.image = UIImage(systemName: "star.circle.fill", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))
         } else {
             favoritesFilterButton.image = UIImage(systemName: "star.circle", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))
         }
+    }
+    
+    @IBAction func displayFavorites() {
+        onlyFavorites = !onlyFavorites
+        self.getAllFavoriteBooks()
+        changeButtonIcont(onlyFavorites)
+        self.booksCollection.reloadData()
     }
     
     func createErrorAlert(title: String, message: String) {
@@ -85,8 +87,6 @@ class BooksCollectionViewController: UIViewController {
         DispatchQueue.main.async {
             self.present(alert, animated: true, completion: nil)
         }
-        
-        
     }
     
 }
@@ -146,9 +146,6 @@ extension BooksCollectionViewController: UICollectionViewDelegate, UICollectionV
         }
         navigationController?.pushViewController(controller, animated: true)
     }
-    
-    
-    
 }
 
 // MARK: - API delegate implementation

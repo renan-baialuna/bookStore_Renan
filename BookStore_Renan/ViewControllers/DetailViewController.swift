@@ -22,6 +22,8 @@ class DetailViewController: UIViewController {
     var isFavorite: Bool = false
     var favorite: Favorites?
     
+// MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,6 +53,8 @@ class DetailViewController: UIViewController {
         chageFavoriteUI(isFavorite: isFavorite)
     }
     
+    // MARK: - Buttons actions
+    
     @IBAction func buyAction() {
         if let urlString = book.volume.saleInfo.buyLink {
             if let url = URL(string: urlString) {
@@ -69,6 +73,8 @@ class DetailViewController: UIViewController {
         chageFavoriteUI(isFavorite: isFavorite)
         
     }
+    
+    // MARK: - UI functions
     
     func setTitle(title: [String]?) {
         if let title = title {
