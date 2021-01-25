@@ -12,9 +12,7 @@ struct Volumes: Codable {
 }
 
 struct Item: Codable {
-    let kind: String
-    let id, etag: String
-    let selfLink: String
+    let id: String
     let volumeInfo: VolumeInfo
     let saleInfo: SaleInfo
 }
@@ -25,7 +23,6 @@ struct SaleInfo: Codable {
 
 struct VolumeInfo: Codable {
     let title: String
-    let subtitle: String?
     let authors: [String]?
     let description: String
     let imageLinks: ImageLinks

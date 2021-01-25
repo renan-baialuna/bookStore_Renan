@@ -251,6 +251,7 @@
                         <outlet property="buyButton" destination="Fm0-1d-Wat" id="usi-p6-lNf"/>
                         <outlet property="descriptionBookTextField" destination="ZeU-Ht-j4z" id="F5A-Nz-kW6"/>
                         <outlet property="favoriteButton" destination="Sxm-JD-i9x" id="fKe-m0-o4n"/>
+                        <outlet property="preTitleLabel" destination="ex4-Mv-Nep" id="YRh-jY-0zX"/>
                         <outlet property="titleLabel" destination="zi8-BM-b9d" id="cwb-Uf-1Yg"/>
                     </connections>
                 </viewController>
