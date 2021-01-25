@@ -124,6 +124,9 @@ extension BooksCollectionViewController: UICollectionViewDelegate, UICollectionV
         cell.backView.layer.cornerRadius = 10
         cell.backView.layer.masksToBounds = true
         
+        cell.label.adjustsFontSizeToFitWidth = true
+        cell.label.minimumScaleFactor = 0.3
+        
         return cell
     }
     
